@@ -26,13 +26,22 @@
 
 ## Problem I solved yesterday 😎
 * 
-* 
 
 ---
 
 ## What I learned today 💡
-### Title 
-* 
+### setInterval setTimeout
+* W3Schools reference [here](https://www.w3schools.com/jsref/met_win_setinterval.asp)
+* Auto run function with specific timing
+*
+
+### Music player
+* use setInterval to get the player current time
+* `Math.random()`
+* `Math.floor()`
+* `Math.round()`
+* `Fixed
+
 
 ---
 
@@ -44,4 +53,5 @@
 
 ## Homeworks 📝
 * read more `document.` hieracy 
+* study how [colourclock website](http://thecolourclock.com/) works
 

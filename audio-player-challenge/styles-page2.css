@@ -1,0 +1,4 @@
+#page2 {
+    background: rgb(28,31,51);
+    background: linear-gradient(23deg, rgba(28,31,51,1) 11%, rgba(212,60,85,1) 100%);
+}

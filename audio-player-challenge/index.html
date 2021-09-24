@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spotizy</title>
+
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+        
+
+    <!-- FONT AWESOME PACK -->
+    <script src="https://kit.fontawesome.com/8ff303108c.js" crossorigin="anonymous"></script>
+
+
+    <!-- CSS STYLE -->
+    <link rel="stylesheet" href="styles-page1.css">
+    <link rel="stylesheet" href="styles-page2.css">
+    <link rel="stylesheet" href="animation.css">
+
+
+    <!-- FAVICON -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    </head>
+<body>
+
+    <div id="app">
+
+        <!-- APP PAGE 1 -->
+        <div id="page1">
+
+
+
+            <!-- TODAY INFO -->
+            <!-- ? get date and day dynamically -->
+            <div id="dayInfo">
+                <h1 id="todayDay">Friday</h1>
+                <h3 id="todayDate">24 Sept 2021</h3>
+                <p>Made with <i class="fas fa-heart"></i> zahinz.io</p>
+                <div id="menuTop">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+
+
+
+            <!-- SEARCHBAR -->
+            <!-- ? play mucic according typed mood -->
+            <div id="searchArea">
+                <div id="searchBar">
+                    <i id="searchBtn" class="fas fa-search"></i>
+                    <input type="text" name="" id="searchField" placeholder="What is your mood today?">
+                </div>
+                <h2 id="searchText">Search the music in your mind</h2>
+            </div>
+
+
+
+            <!-- MOOD NAV -->
+            <!-- ? list of moods, click playMusic() play song in parameter -->
+            <!-- * horizontal scroll -->
+
+            <div id="moodNav">
+                <h2 id="moodList1" class="nav-title" onclick="playMusic('music1')">Focus</h2>
+                <h2 id="moodList2"2 class="nav-title" onclick="playMusic('music2')">Inspiring</h2>
+                <h2 id="moodList3" class="nav-title" onclick="playMusic('music3')">Sorrow</h2>
+                <h2 id="moodList4" class="nav-title" onclick="playMusic('music4')">Travel</h2>
+                <h2 id="moodList5" class="nav-title" onclick="playMusic('music5')">Euphoria</h2>
+            </div>
+
+
+
+            <!-- MUSIC CARD -->
+            <!-- ? list of music, click playMusic() play song in parameter -->
+            <!-- * horizontal scroll -->
+
+
+            <div id="musicNav">
+                <div class="music-card" onclick="playMusic('music1')">
+                    <div id="musicCard1" class="music-list music-1">
+                        <div id="detailsCard1" class="details-card">
+                            <div>
+                                <h3 id="titleCard">into your arm</h3>
+                                <h4 id="artistCard">ava max</h4>
+                            </div>
+                            <p id="durationCard">3.12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="music-card" onclick="playMusic('music1')">
+                    <div id="musicCard2" class="music-list music-2">
+                        <div id="detailsCard2" class="details-card">
+                            <div>
+                                <h3 id="titleCard">into your arm</h3>
+                                <h4 id="artistCard">ava max</h4>
+                            </div>
+                            <p id="durationCard">3.12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="music-card" onclick="playMusic('music1')">
+                    <div id="musicCard3" class="music-list music-3">
+                        <div id="detailsCard3" class="details-card">
+                            <div>
+                                <h3 id="titleCard">into your arm</h3>
+                                <h4 id="artistCard">ava max</h4>
+                            </div>
+                            <p id="durationCard">3.12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="music-card" onclick="playMusic('music1')">
+                    <div id="musicCard4" class="music-list music-4">
+                        <div id="detailsCard4" class="details-card">
+                            <div>
+                                <h3 id="titleCard">into your arm</h3>
+                                <h4 id="artistCard">ava max</h4>
+                            </div>
+                            <p id="durationCard">3.12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="music-card" onclick="playMusic('music1')">
+                    <div id="musicCard5" class="music-list music-5">
+                        <div id="detailsCard5" class="details-card">
+                            <div>
+                                <h3 id="titleCard">into your arm</h3>
+                                <h4 id="artistCard">ava max</h4>
+                            </div>
+                            <p id="durationCard">3.12</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- PLAYBACK -->
+            <!-- ? static div album cover, title, artist, current duration, total duratin, play/pause, simple time bar  -->
+
+            <div id="playbackInfo">
+                <!-- TIME BAR -->
+                <div id="totalDurationBar" class="total-duration-bar">
+                    <div id="currentDurationBar" class="current-duration-bar"></div>
+                </div>
+
+                <!-- STATUS -->
+                <div class="status">
+                    <div id="playBtn" class="main-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div id="coverImage" class="cover-image"></div>
+                    <div id="detail" class="details">
+                        <h3 id="musicTitle" class="music-title">paris</h3>
+                        <h4 id="musicArtist" class="music-artist">chainsmoker</h4>
+                        <p><span id="currentDuration">0.12</span> / <span id="totalDuration">5.00</span></p>
+                    </div>
+                </div>
+                
+                <!-- NAV -->
+                <div id="navHome" class="nav-home">
+                    <div id="home" class="nav-btn">
+                        <i class="fas fa-headphones-alt"></i>
+                        Home
+                    </div>
+                    <div id="explore" class="nav-btn">
+                        <i class="fas fa-globe-asia"></i>
+                        Explore
+                    </div>
+                    <div id="likes" class="nav-btn">
+                        <i class="far fa-heart"></i>
+                        Likes
+                    </div>
+                    <div id="user" class="nav-btn">
+                        <i class="fas fa-user"></i>
+                        Me
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- APP PAGE 2 -->
+        <div id="page2">
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,464 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; 
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    /* COLOR */
+    --pri-color: rgb(212, 60, 85);
+    --sec-color: rgb(28, 31, 51);
+    --ter-color: rgb(92, 92, 92);
+    --qua-color: rgb(201, 201, 201);
+
+    /* FONT */
+    --pri-font-size: 2.7rem;
+    --sec-font-size: 1.0rem;
+    --ter-font-size: 0.9rem;
+    --qua-font-size: 0.7rem;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white
+}
+
+img {
+    width: 100%;
+}
+
+input {
+    background-color: transparent;
+    color: var(--sec-color);
+    border: none;
+    padding: 12px 12px 12px 0;
+    outline: none;
+}
+
+#app {
+    height: 780px;
+    width: 400px;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0 10px 50px rgba(128, 128, 128, 0.438);
+}
+
+#page1, #page2  {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 1.5rem;
+}
+
+
+  
+
+/* BUTTON */
+
+.main-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--pri-color);
+    color: white;
+    transition: all 200ms;
+}
+
+.main-btn:active {
+    transform: scale(115%);
+    opacity: 0.3;
+}
+
+
+
+
+/* TODAY INFO */
+
+#dayInfo {
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+}
+
+
+/* ? HAMBURGER MENU */
+#menuTop {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+
+#menuTop .fa-bars {
+    font-size: 1.4rem;
+}
+
+/* ? Apply gradint into the text */
+#todayDay {
+    font-size: var(--pri-font-size);
+    background-image: linear-gradient(10deg, rgba(28,31,51,1) 1%, rgba(212,60,85,1) 60%);
+    background-clip: text;
+    color: transparent;
+    /* GOOGLE CHROME */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#todayDate {
+    font: var(--qua-font-size);
+    color: var(--ter-color);
+    margin-top: 10px;
+}
+
+#dayInfo p, #dayInfo .fa-heart {
+    color: var(--pri-color);
+    font-size: var(--qua-font-size);
+    margin-top: 5px;
+}
+
+
+/* SEARCH BAR */
+/* ? will change the CSS using CSS using javascript */
+
+#searchArea {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    transition: all 300ms;
+}
+
+#searchText {
+    font-size: var(--ter-font-size);
+    color: var(--ter-color);
+    font-weight: 400;
+    margin-left: 10px;
+    display: block;
+    transition: all 300ms;
+}
+
+#searchBar {
+    display: flex;
+    align-items: center;
+    height: 47px;
+    width: min-content;
+    background-color: white;
+    border-radius: 10px;
+    transition: all 300ms;
+}
+
+#searchBar i {
+    height: 100%;
+    width: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms;
+    color: var(--ter-color);
+}
+
+#searchBar input {
+    display: none;
+    width: inherit;
+    color: var(--ter-color);
+    transition: all 300ms;
+}
+
+
+
+/* MOOD LABEL */
+
+#moodNav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+
+    /* ! ENABLE HORIZON SCROLL */
+    overflow: auto;
+    white-space: nowrap;
+
+    /* ! HIDE SCROLL BAR  */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+
+    /* ! APPLY MASKING GRADIENT */
+    -webkit-mask-image: linear-gradient(to left, transparent 5%, black 15%);
+    mask-image: linear-gradient(to left, transparent 0%, black 15%);
+
+    /* ! DISABLE TEXT SELECT */
+    user-select: none;
+}
+
+#moodNav h2 {
+    font-size: var(--sec-font-size);
+    color: var(--pri-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    margin-right: 20px;
+
+}
+
+
+
+/* MUSIC CARD */
+
+#musicNav {
+    display: block;
+    width: 100%;
+    height: max-content;
+    margin-top: 15px;
+    
+    /* ! ENABLE HORIZON SCROLL */
+    overflow: auto;
+    white-space: nowrap;
+
+    /* ! HIDE SCROLLBAR  */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+
+    /* ! DISABLE TEXT SELECT */
+    user-select: none;
+}
+
+.music-card {
+    display: inline-block;
+
+    width: 200px;
+    height: 250px;
+
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    margin-right: 10px;
+    margin-bottom: 8px;
+
+    box-shadow: 6px 6px 0 white;
+}
+
+.music-list {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* MUSIC CARD BACKGROUND IMAGE*/
+
+.music-1 {
+    background-image: url(assets/thumbnails/ava-max-into-your-arms.jpg);
+    background-position: top;
+    background-size: contain;
+}
+.music-2 {
+    background-image: url(assets/thumbnails/justin-hold.jpg);
+    background-position: top;
+    background-size: contain;
+}
+.music-3 {
+    background-image: url(assets/thumbnails/chainsmoker-something-like-this.png);
+    background-position: top;
+    background-size: contain;
+}
+.music-4 {
+    background-image: url(assets/thumbnails/post-malone-rockstar.jpeg);
+    background-position: top;
+    background-size: contain;
+}
+.music-5 {
+    background-image: url(assets/thumbnails/chainsmoker-paris.png);
+
+    background-position: top;
+    background-size: contain;
+}
+
+
+/* MUSIC CARD DETAILS */
+
+.details-card {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    bottom: 0;
+    left: 0;
+    height: 150px;
+    width: 100%;
+    background: linear-gradient(10deg, rgba(28,31,51,1) 50%, rgba(0,0,0,0) 80%);
+    padding: 25px 15px 13px 15px;
+    box-sizing: border-box;
+}
+
+.details-card div h3 {
+    color: white;
+    font-size: var(--ter-font-size);
+}
+
+.details-card div h4 {
+    color: var(--qua-color);
+    font-size: var(--qua-font-size);
+    margin-top: 5px;
+} 
+
+.details-card p {
+    color: var(--qua-color);
+    font-size: var(--ter-font-size);
+    margin-bottom: 8px;
+    opacity: 0.7;
+}
+
+
+
+
+/* PLAYBACK STATUS */
+
+#playbackInfo {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgb(28,31,51);
+    background: linear-gradient(23deg, rgba(28,31,51,1) 11%, rgba(212,60,85,1) 100%);
+}
+
+#playbackInfo .status {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+#playbackInfo .status .cover-image {
+    height: 100px;
+    width: 100px;
+    background-image: url(assets/thumbnails/chainsmoker-paris.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin: 10px 0 10px 20px;
+}
+
+#playbackInfo .status .details {
+    padding-left: 15px;
+    color: white;
+}
+
+/* ? MUSIC TITLE */
+#playbackInfo .status .details h3 {
+    font-size: var(--sec-font-size);
+    font-weight: 400;
+    margin-bottom: 3px;
+    text-transform: capitalize;
+}
+
+/* ? MUSIC ARTIST */
+#playbackInfo .status .details h4 {
+    font-size: var(--ter-font-size);
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    color: var(--qua-color);
+}
+
+/* ? MUSIC DURATION */
+#playbackInfo .status .details p {
+    font-size: var(--qua-font-size);
+}
+
+
+/* PLAY BUTTON */
+
+
+.status .main-btn {
+    position: absolute;
+    right: 40px;
+    background-color: white;
+    color: var(--pri-color);
+}
+
+
+
+/* TIMEBAR */
+
+
+#playbackInfo .total-duration-bar {
+    width: 100%;
+    height: 5px;
+    background-color: gainsboro;
+}
+
+#playbackInfo .current-duration-bar {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(236, 53, 83);
+}
+
+
+
+/* BOTTOM NAV */
+
+#navHome {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    padding: 0 40px;
+    margin-bottom: 20px
+}
+
+#navHome .nav-btn {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--qua-color);
+    padding: 20px 0;
+    font-size: var(--qua-font-size);
+    transition: all 100ms;
+    /* ! DISABLE TEXT SELECT */
+    user-select: none;
+}
+
+
+#navHome .nav-btn i {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--qua-color);
+}
+
+
+#navHome .nav-btn:active {
+    transform: scale(120%);
+    color: white;
+    opacity: 0.2;
+}
+
+#navHome .nav-btn:active i {
+    color: white;
+}
+
+
+
+
