@@ -19,8 +19,8 @@ html, body {
 
     /* FONT */
     --pri-font-size: 2.7rem;
-    --sec-font-size: 1.0rem;
-    --ter-font-size: 0.9rem;
+    --sec-font-size: 0.9rem;
+    --ter-font-size: 0.8rem;
     --qua-font-size: 0.7rem;
 }
 
@@ -28,7 +28,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white
+    background-color: white;
+    transition: all 200ms;
 }
 
 img {
@@ -41,16 +42,20 @@ input {
     border: none;
     padding: 12px 12px 12px 0;
     outline: none;
+    font-size: var(--ter-font-size);
 }
 
 #app {
     height: 780px;
     width: 400px;
+    min-width: 380px;
     border-radius: 50px;
     position: relative;
     overflow: hidden;
     background-color: rgb(240, 240, 240);
     box-shadow: 0 10px 50px rgba(128, 128, 128, 0.438);
+
+    transition: all 500ms;
 }
 
 #page1, #page2  {
@@ -60,6 +65,8 @@ input {
     top: 0;
     left: 0;
     padding: 0 1.5rem;
+
+    transition: all 500ms;
 }
 
 
@@ -79,7 +86,7 @@ input {
     transition: all 200ms;
 }
 
-.main-btn:active {
+.main-btn:active, .sec-btn:active {
     transform: scale(115%);
     opacity: 0.3;
 }
@@ -94,6 +101,7 @@ input {
     margin-top: 50px;
     position: relative;
 }
+
 
 
 /* ? HAMBURGER MENU */
@@ -124,10 +132,23 @@ input {
     margin-top: 10px;
 }
 
+.trade-mark {
+    position: absolute;
+    right: -5px;
+    top: 59px;
+    background-color: var(--pri-color);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transform: scale(80%);
+}
+
 #dayInfo p, #dayInfo .fa-heart {
-    color: var(--pri-color);
+    color: white;
     font-size: var(--qua-font-size);
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 
@@ -140,6 +161,9 @@ input {
     margin-top: 20px;
     width: 100%;
     transition: all 300ms;
+    overflow: auto;
+    white-space: nowrap;
+    position: relative;
 }
 
 #searchText {
@@ -149,13 +173,15 @@ input {
     margin-left: 10px;
     display: block;
     transition: all 300ms;
+    position: absolute;
+    left: 15%;
 }
 
 #searchBar {
     display: flex;
     align-items: center;
+    width: 13.5%;
     height: 47px;
-    width: min-content;
     background-color: white;
     border-radius: 10px;
     transition: all 300ms;
@@ -163,19 +189,21 @@ input {
 
 #searchBar i {
     height: 100%;
-    width: 47px;
+    width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 300ms;
     color: var(--ter-color);
+    position: fixed;
 }
 
 #searchBar input {
     display: none;
-    width: inherit;
     color: var(--ter-color);
     transition: all 300ms;
+    position: absolute;
+    left: 15%;
 }
 
 
@@ -265,27 +293,27 @@ input {
 /* MUSIC CARD BACKGROUND IMAGE*/
 
 .music-1 {
-    background-image: url(assets/thumbnails/ava-max-into-your-arms.jpg);
+    /* background-image: url(assets/thumbnails/ava-max-into-your-arms.jpg); */
     background-position: top;
     background-size: contain;
 }
 .music-2 {
-    background-image: url(assets/thumbnails/justin-hold.jpg);
+    /* background-image: url(assets/thumbnails/justin-hold.jpg); */
     background-position: top;
     background-size: contain;
 }
 .music-3 {
-    background-image: url(assets/thumbnails/chainsmoker-something-like-this.png);
+    /* background-image: url(assets/thumbnails/chainsmoker-something-like-this.png); */
     background-position: top;
     background-size: contain;
 }
 .music-4 {
-    background-image: url(assets/thumbnails/post-malone-rockstar.jpeg);
+    /* background-image: url(assets/thumbnails/post-malone-rockstar.jpeg); */
     background-position: top;
     background-size: contain;
 }
 .music-5 {
-    background-image: url(assets/thumbnails/chainsmoker-paris.png);
+    /* background-image: url(assets/thumbnails/chainsmoker-paris.png); */
 
     background-position: top;
     background-size: contain;
@@ -307,6 +335,10 @@ input {
     background: linear-gradient(10deg, rgba(28,31,51,1) 50%, rgba(0,0,0,0) 80%);
     padding: 25px 15px 13px 15px;
     box-sizing: border-box;
+}
+
+.details-card div {
+    width: 50px;
 }
 
 .details-card div h3 {
@@ -348,14 +380,20 @@ input {
     position: relative;
 }
 
+#touchArea {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
 #playbackInfo .status .cover-image {
     height: 100px;
     width: 100px;
-    background-image: url(assets/thumbnails/chainsmoker-paris.png);
+    background-image: none;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    margin: 10px 0 10px 20px;
+    margin: 15px 0 10px 15px;
 }
 
 #playbackInfo .status .details {
@@ -404,13 +442,14 @@ input {
 #playbackInfo .total-duration-bar {
     width: 100%;
     height: 5px;
-    background-color: gainsboro;
+    background-color: white;
 }
 
 #playbackInfo .current-duration-bar {
-    width: 50%;
+    width: 0%;
     height: 100%;
     background-color: rgb(236, 53, 83);
+    transition: all 500ms;
 }
 
 
@@ -457,6 +496,23 @@ input {
 
 #navHome .nav-btn:active i {
     color: white;
+}
+
+
+@media (max-width: 400px) {
+
+    #app {
+        height: 100vh;
+        width: 100vw;
+        border-radius: 0;
+        box-shadow: none;
+        padding-top: 30px;
+    }
+
+    #page1, #page2  {
+        padding: 0 0.7rem;
+    }
+    
 }
 
 

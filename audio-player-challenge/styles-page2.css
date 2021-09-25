@@ -1,4 +1,206 @@
-#page2 {
-    background: rgb(28,31,51);
-    background: linear-gradient(23deg, rgba(28,31,51,1) 11%, rgba(212,60,85,1) 100%);
+:root {
+    /* COLOR */
+    --pri-color: rgb(212, 60, 85);
+    --sec-color: rgb(28, 31, 51);
+    --ter-color: rgb(92, 92, 92);
+    --qua-color: rgb(201, 201, 201);
+
+    /* FONT */
+    --pri-font-size: 2.7rem;
+    --sec-font-size: 0.9rem;
+    --ter-font-size: 0.8rem;
+    --qua-font-size: 0.7rem;
 }
+
+#page2 {
+    background: linear-gradient(23deg, rgba(28,31,51,1) 11%, rgba(212,60,85,1) 100%);
+    opacity: 1;
+    display: none;
+
+    /* !insert display: flex using JS */
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* TOPBAR */
+
+#topBar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 56px;
+}
+
+#topBar i {
+    font-size: 1.2rem;
+    color: white;
+    padding: 10px;
+}
+
+#topBar h3 {
+    color: white;
+    font-size: var(--ter-font-size);
+}
+
+
+/* BIG THUMBNAIL */
+
+#coverPrev {
+    background-color: white;
+    background-image: url(assets/thumbnails/chainsmoker-something-like-this.png);
+    background-position: center;
+    background-size: contain;
+    box-shadow: 0 0 50px rgba(37, 37, 37, 0.3);
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    border-radius: 10px;
+    top: 20%;
+    left: 10%;
+    transform: translateX(-50%) scale(70%);
+    filter: blur(2px);
+}
+
+#coverNow {
+    background-color: white;
+    background-image: url(assets/thumbnails/chainsmoker-paris.png);
+    background-position: center;
+    background-size: contain;
+    box-shadow: 0 0 30px rgb(37, 37, 37);
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    border-radius: 10px;
+    top: 19%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.prev-next-controller {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 5%;
+    color: white;
+    position: fixed;
+}
+
+.prev-next-controller i {
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+
+#coverNext {
+    background-color: white;
+    background-image: url(assets/thumbnails/post-malone-rockstar.jpeg);
+    background-position: center;
+    background-size: contain;
+    box-shadow: 0 0 50px rgba(37, 37, 37, 0.3);
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    border-radius: 10px;
+    top: 20%;
+    left: 90%;
+    transform: translateX(-50%) scale(70%);
+    filter: blur(2px);
+}
+
+
+
+
+/* PLAYER BAR */
+
+#bottomBar {
+    width: 93%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+    position: fixed;
+    bottom: 18%;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+#bottomBar .sec-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 50px;
+    width: 50px;
+    transition: all 200ms;
+}
+
+#bottomBar .active-loop {
+    color: var(--pri-color);
+}
+
+
+/* MUSIC INFO */
+
+#page2 #musicInfo {
+    position: fixed;
+    bottom: 32%;
+    width: 100%;
+    padding: 0 50px;
+}
+
+#page2 #musicInfo h3 {
+    font-size: var(--sec-font-size);
+    color: white;
+    text-transform: capitalize;
+}
+
+#page2 #musicInfo h4 {
+    font-size: var(--ter-font-size);
+    color: var(--qua-color);
+    font-weight: 400;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+
+#page2 .total-duration-bar {
+    width: 80%;
+    height: 5px;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 27%;
+}
+
+#page2 .current-duration-bar {
+    width: 0%;
+    height: 100%;
+    background-color: rgb(236, 53, 83);
+    transition: all 500ms;
+}
+
+
+
+/* NAVBAR */
+
+#page2 #navHome {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(10deg, rgba(28,31,51,1) 50%, rgba(0,0,0,0) 80%);
+}
+
+#page2 #navHome .nav-btn i {
+    color: var(--pri-color);
+}
+

@@ -1,0 +1,73 @@
+.swipe-up {
+    animation-name: swipeUp;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+@keyframes swipeUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+    
+}
+
+
+.swipe-down {
+    animation-name: swipeDown;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+@keyframes swipeDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
+    
+}
+
+
+.grow-width {
+    animation-name: growWidth;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+@keyframes growWidth {
+    from {
+        opacity: 0,5;
+        width: 20%;
+    }
+
+    to {
+        opacity: 1;
+        width: 100%;
+    }
+    
+}
+
+.shrink-width {
+    animation-name: shrinkWidth;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+@keyframes shrinkWidth {
+    from {
+        /* opacity: 0,5; */
+        width: 100%;
+    }
+
+    to {
+        /* opacity: 1; */
+        width: 13.5%;
+    }
+    
+}

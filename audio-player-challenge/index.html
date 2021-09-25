@@ -28,8 +28,10 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
     </head>
 <body>
-
+    <audio src="" id="audioPlayer"></audio>
     <div id="app">
+
+      
 
         <!-- APP PAGE 1 -->
         <div id="page1">
@@ -41,7 +43,9 @@
             <div id="dayInfo">
                 <h1 id="todayDay">Friday</h1>
                 <h3 id="todayDate">24 Sept 2021</h3>
-                <p>Made with <i class="fas fa-heart"></i> zahinz.io</p>
+                <div class="trade-mark">
+                    <p>Made with <i class="fas fa-heart"></i> zahinz.io</p>
+                </div>
                 <div id="menuTop">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -53,7 +57,7 @@
             <!-- ? play mucic according typed mood -->
             <div id="searchArea">
                 <div id="searchBar">
-                    <i id="searchBtn" class="fas fa-search"></i>
+                    <i id="searchBtn" class="fas fa-search" onclick="searchAction()"></i>
                     <input type="text" name="" id="searchField" placeholder="What is your mood today?">
                 </div>
                 <h2 id="searchText">Search the music in your mind</h2>
@@ -66,11 +70,11 @@
             <!-- * horizontal scroll -->
 
             <div id="moodNav">
-                <h2 id="moodList1" class="nav-title" onclick="playMusic('music1')">Focus</h2>
-                <h2 id="moodList2"2 class="nav-title" onclick="playMusic('music2')">Inspiring</h2>
-                <h2 id="moodList3" class="nav-title" onclick="playMusic('music3')">Sorrow</h2>
-                <h2 id="moodList4" class="nav-title" onclick="playMusic('music4')">Travel</h2>
-                <h2 id="moodList5" class="nav-title" onclick="playMusic('music5')">Euphoria</h2>
+                <h2 id="moodList1" class="nav-title" onclick="selectMusic(0)">Focus</h2>
+                <h2 id="moodList2"2 class="nav-title" onclick="selectMusic(1)">Inspiring</h2>
+                <h2 id="moodList3" class="nav-title" onclick="selectMusic(2)">Sorrow</h2>
+                <h2 id="moodList4" class="nav-title" onclick="selectMusic(3)">Travel</h2>
+                <h2 id="moodList5" class="nav-title" onclick="selectMusic(4)">Euphoria</h2>
             </div>
 
 
@@ -81,62 +85,69 @@
 
 
             <div id="musicNav">
-                <div class="music-card" onclick="playMusic('music1')">
+
+                <div class="music-card" onclick="selectMusic(0)">
                     <div id="musicCard1" class="music-list music-1">
                         <div id="detailsCard1" class="details-card">
                             <div>
-                                <h3 id="titleCard">into your arm</h3>
-                                <h4 id="artistCard">ava max</h4>
+                                <h3 id="titleCard1">title</h3>
+                                <h4 id="artistCard1">artist</h4>
                             </div>
-                            <p id="durationCard">3.12</p>
+                            <p id="durationCard1">0:00</p>
                         </div>
                     </div>
                 </div>
-                <div class="music-card" onclick="playMusic('music1')">
+
+                <div class="music-card" onclick="selectMusic(1)">
                     <div id="musicCard2" class="music-list music-2">
                         <div id="detailsCard2" class="details-card">
                             <div>
-                                <h3 id="titleCard">into your arm</h3>
-                                <h4 id="artistCard">ava max</h4>
+                                <h3 id="titleCard2">title</h3>
+                                <h4 id="artistCard2">artist</h4>
                             </div>
-                            <p id="durationCard">3.12</p>
+                            <p id="durationCard2">0:00</p>
                         </div>
                     </div>
                 </div>
-                <div class="music-card" onclick="playMusic('music1')">
+
+                <div class="music-card" onclick="selectMusic(2)">
                     <div id="musicCard3" class="music-list music-3">
                         <div id="detailsCard3" class="details-card">
                             <div>
-                                <h3 id="titleCard">into your arm</h3>
-                                <h4 id="artistCard">ava max</h4>
+                                <h3 id="titleCard3">title</h3>
+                                <h4 id="artistCard3">artist</h4>
                             </div>
-                            <p id="durationCard">3.12</p>
+                            <p id="durationCard3">0:00</p>
                         </div>
                     </div>
                 </div>
-                <div class="music-card" onclick="playMusic('music1')">
+
+                <div class="music-card" onclick="selectMusic(3)">
                     <div id="musicCard4" class="music-list music-4">
                         <div id="detailsCard4" class="details-card">
                             <div>
-                                <h3 id="titleCard">into your arm</h3>
-                                <h4 id="artistCard">ava max</h4>
+                                <h3 id="titleCard4">title</h3>
+                                <h4 id="artistCard4">artist</h4>
                             </div>
-                            <p id="durationCard">3.12</p>
+                            <p id="durationCard4">0:00</p>
                         </div>
                     </div>
                 </div>
-                <div class="music-card" onclick="playMusic('music1')">
+
+                <div class="music-card" onclick="selectMusic(4)">
                     <div id="musicCard5" class="music-list music-5">
                         <div id="detailsCard5" class="details-card">
                             <div>
-                                <h3 id="titleCard">into your arm</h3>
-                                <h4 id="artistCard">ava max</h4>
+                                <h3 id="titleCard5">title</h3>
+                                <h4 id="artistCard5">artist</h4>
                             </div>
-                            <p id="durationCard">3.12</p>
+                            <p id="durationCard5">0:00</p>
                         </div>
                     </div>
                 </div>
+
             </div>
+
 
 
 
@@ -151,14 +162,16 @@
 
                 <!-- STATUS -->
                 <div class="status">
-                    <div id="playBtn" class="main-btn">
+                    <div id="playBtn" class="main-btn" onclick="playAudio()">
                         <i class="fas fa-play"></i>
                     </div>
-                    <div id="coverImage" class="cover-image"></div>
-                    <div id="detail" class="details">
-                        <h3 id="musicTitle" class="music-title">paris</h3>
-                        <h4 id="musicArtist" class="music-artist">chainsmoker</h4>
-                        <p><span id="currentDuration">0.12</span> / <span id="totalDuration">5.00</span></p>
+                    <div id="touchArea" onclick="maxSizePlayerPage()">
+                        <div id="coverImage" class="cover-image"></div>
+                        <div id="detail" class="details">
+                            <h3 id="musicTitle" class="music-title"></h3>
+                            <h4 id="musicArtist" class="music-artist"></h4>
+                            <p><span id="currentDuration">00:00</span> / <span id="totalDuration">00:00</span></p>
+                        </div>
                     </div>
                 </div>
                 
@@ -190,6 +203,72 @@
         <!-- APP PAGE 2 -->
         <div id="page2">
 
+            <!-- TOP BAR -->
+            <div id="topBar">
+                <i class="fas fa-angle-down" onclick="minSizePlayerPage()"></i>
+                <h3 id="musicArtist" class="music-artist"></h3>
+                <i class="fas fa-ellipsis-h"></i>
+            </div>
+
+            <!-- THUMBNAIL -->
+            <div id="coverPrev"></div>
+            <div id="coverNow" onclick="playAudio()">
+                <div class="prev-next-controller">
+                    <i class="fas fa-backward sec-btn" onclick="prevMusic()"></i>
+                    <i class="fas fa-forward sec-btn" onclick="nextMusic()"></i>
+                </div>
+            </div>
+            <div id="coverNext"></div>
+
+
+            <!-- MUSIC INFO -->
+            <div id="musicInfo">
+                <h3 id="musicTitle" class="music-title"></h3>
+                <h4 id="musicArtist" class="music-artist"></h4>
+            </div>
+
+            <div id="totalDurationBar" class="total-duration-bar">
+                <div id="currentDurationBar" class="current-duration-bar"></div>
+            </div>
+
+
+            <!-- PLAYER BAR -->
+            <div id="bottomBar">
+
+                <i class="fas fa-random sec-btn" onclick="shuffleMusic()"></i>
+
+                <i id="loopBtn" class="fas fa-redo-alt sec-btn" onclick="loopBtn()"></i>
+
+                <div class="main-btn" onclick="playAudio()">
+                    <i class="fas fa-play"></i>
+                </div>
+
+                <i id="muteLabel" class="fas fa-volume-down sec-btn" onclick="volLevel(-0.1)"></i>
+
+                <i class="fas fa-volume-up sec-btn" onclick="volLevel(0.1)"></i>
+
+            </div>
+
+
+            <!-- NAV -->
+            <!-- <div id="navHome" class="nav-home">
+                <div id="home" class="nav-btn">
+                    <i class="fas fa-headphones-alt"></i>
+                    Home
+                </div>
+                <div id="explore" class="nav-btn">
+                    <i class="fas fa-globe-asia"></i>
+                    Explore
+                </div>
+                <div id="likes" class="nav-btn">
+                    <i class="far fa-heart"></i>
+                    Likes
+                </div>
+                <div id="user" class="nav-btn">
+                    <i class="fas fa-user"></i>
+                    Me
+                </div>
+            </div> -->
 
 
         </div>
@@ -205,7 +284,8 @@
 
 
     <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+    <script src="ui.js"></script>
+    <script src="player.js"></script>
     
 </body>
 </html>
