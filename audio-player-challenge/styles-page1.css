@@ -500,7 +500,7 @@ input {
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
 
     #app {
         height: 100vh;

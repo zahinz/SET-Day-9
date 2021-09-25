@@ -64,6 +64,7 @@
     top: 20%;
     left: 10%;
     transform: translateX(-50%) scale(70%);
+    -webkit-transform: translateX(-50%) scale(0.7, 0.7);
     filter: blur(2px);
 }
 
@@ -80,6 +81,7 @@
     top: 19%;
     left: 50%;
     transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
     z-index: 100;
 }
 
@@ -113,6 +115,7 @@
     top: 20%;
     left: 90%;
     transform: translateX(-50%) scale(70%);
+    -webkit-transform: translateX(-50%) scale(0.7, 0.7);
     filter: blur(2px);
 }
 
