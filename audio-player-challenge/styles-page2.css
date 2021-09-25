@@ -16,6 +16,7 @@
     background: linear-gradient(23deg, rgba(28,31,51,1) 11%, rgba(212,60,85,1) 100%);
     opacity: 1;
     display: none;
+    position: relative;
 
     /* !insert display: flex using JS */
     /* display: flex; */
@@ -156,6 +157,7 @@
     bottom: 32%;
     width: 100%;
     padding: 0 50px;
+    z-index: 100;
 }
 
 #page2 #musicInfo h3 {
@@ -180,6 +182,7 @@
     border-radius: 10px;
     position: fixed;
     bottom: 27%;
+    z-index: 100;
 }
 
 #page2 .current-duration-bar {
@@ -202,5 +205,27 @@
 
 #page2 #navHome .nav-btn i {
     color: var(--pri-color);
+}
+
+
+/* TIMING DURATION */
+
+#page2 #currentDuration, #page2 #totalDuration {
+    position: absolute;
+    font-size: 12rem;
+    font-weight: lighter;
+    color: white;
+    opacity: 0.05;
+    filter: blur(1px);
+}
+
+#page2 #currentDuration {
+    bottom: 12%;
+    right: -11%;
+}
+
+#page2 #totalDuration {
+    bottom: -8%;
+    right: -11%; 
 }
 

@@ -77,6 +77,10 @@ let musicThumbnailSmall = document.getElementById(`coverImage`)
 let totalDuration = document.getElementById(`totalDuration`)
 let liveDuration = document.getElementById(`currentDuration`)
 
+let totalDuration2 = document.getElementsByClassName(`total-duration`)
+let liveDuration2 = document.getElementsByClassName(`current-duration`)
+
+
 // ? music player
 let musicPlayer = document.getElementById(`audioPlayer`)
 
@@ -152,6 +156,9 @@ setInterval(() => {
     // ADD TO THE HTML SPAN
     totalDuration.innerHTML = timeTotal.toHHMMSS();
     liveDuration.innerHTML = timeNow.toHHMMSS()
+
+    totalDuration2[0].innerHTML = timeTotal.toHHMMSS();
+    liveDuration2[0].innerHTML = timeNow.toHHMMSS()
 
 }, 1000);
 
